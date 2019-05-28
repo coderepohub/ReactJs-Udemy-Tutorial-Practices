@@ -1,7 +1,6 @@
 import React ,{Component} from 'react';
 import './App.css';
-import Person from '../components/Persons/Person/Person';
-
+import Persons from '../components/Persons/Persons';
 //Creating Component as Class
 class App extends Component{
   
@@ -92,13 +91,11 @@ deletePersonFromListHandler = (id) =>{
       if(this.state.isPersonVisible){
         personList =( 
           <div>
-            {
-              this.state.persons.map((person,index)=>{
-                return <Person click={this.deletePersonFromListHandler.bind(this,index)}
-                name = {person.name} age={person.age} key={person.id} 
-                changeNameText = {(event)=>this.changeNameTextFieldHandler(event,person.id)} />
-              })
-            }
+            <Persons
+              persons = {this.state.persons}
+             clicked = {this.deletePersonFromListHandler}
+             changedName = {this.changeNameTextFieldHandler}
+             />
           </div>
         );
         //Setting style Dynamically
