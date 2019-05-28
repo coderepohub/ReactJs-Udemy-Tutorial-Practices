@@ -1,5 +1,5 @@
 import React from 'react';
-import './Person.css'
+import './Person.css';
 // Creating Person Component as Function
 //NOTE - Try to use Functional Component more often rather than using Class Component 
 //bcz - these functional comp are dynamic and they don't manipulate app state like Class Comp

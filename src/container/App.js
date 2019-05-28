@@ -1,6 +1,7 @@
 import React ,{Component} from 'react';
 import './App.css';
 import Persons from '../components/Persons/Persons';
+import Cockpit from '../components/Cockpit/Cockpit';
 //Creating Component as Class
 class App extends Component{
   
@@ -102,21 +103,12 @@ deletePersonFromListHandler = (id) =>{
         style.backgroundColor='red';
     }
 
-    const classes = [];
-    if(this.state.persons.length<=2){
-      classes.push('red');
-    }
-    if(this.state.persons.length<=1){
-      classes.push('bold');
-    }
-
+   
     return(
       <div className="App">
-      <h1>Hi, First React App</h1>
-      <p className={classes.join(' ')}>It's working...</p>
-      <br/>
-      <button style={style} onClick={this.togglePersonListHandler}>Toggle Persons</button>
-      <br/>
+      <Cockpit persons={this.state.persons}
+      clicked = {this.togglePersonListHandler}
+      />
      {personList}
       </div>
     );
