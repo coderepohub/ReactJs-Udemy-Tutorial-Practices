@@ -3,11 +3,11 @@ import Person from './Person/Person'
 
 const persons  = (props)=>(
     props.persons.map((person,index)=>{
-        return <Person click={props.clicked.bind(this,index)}
+        return <Person click={()=>props.clicked(index)}
         name = {person.name} 
         age={person.age} 
         key={person.id} 
-        changeNameText = {(event)=>this.changeNameTextFieldHandler(event,person.id)} />
+        changeNameText = {(event)=>props.changedName(event,person.id)} />
 
     })
 );
